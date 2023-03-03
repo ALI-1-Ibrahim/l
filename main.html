@@ -59,7 +59,7 @@ var options = {
 var x = document.getElementById("demo");
 setInterval(() => {
     // if (navigator.geolocation) {
-    id = navigator.geolocation.watchPosition(showPosition);
+    id = navigator.geolocation.getCurrentPosition(showPosition);
 //   } else { 
 //     x.innerHTML = "Geolocation is not supported by this browser.";
 //   }
