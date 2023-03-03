@@ -12,11 +12,12 @@
 	// map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
 var reqcount = 0;
 
-setInterval(() => {
+// setInterval(() => {
     navigator.geolocation.watchPosition(successCallback, errorCallback, options);
 
-}, 500);
-function successCallback(position) {
+// }, 500);
+function successCallback(position) {setInterval(() => {
+        
 	const { accuracy, latitude, longitude, altitude, heading, speed } = position.coords;
     // Show a map centered at latitude / longitude.
     reqcount++;
@@ -26,6 +27,7 @@ function successCallback(position) {
     details.innerHTML += "Heading: "+heading+"<br>";
     details.innerHTML += "Speed: "+speed+"<br>";
     details.innerHTML += "reqcount: "+reqcount;
+}, 500);
 }
 function errorCallback(error) {
 	
